@@ -1,0 +1,492 @@
+:root {
+    font-size : 100%;
+    font-family : system-ui, sans-serif;
+    scroll-behavior : smooth;
+  }
+  * , *::before , *::after {
+    margin : 0;
+    padding : 0;
+    border : 0;
+    box-sizing : border-box;
+    vertical-align : baseline;
+  }
+  *::before , *::after {
+    display : block;
+  }
+  img , picture , video , iframe , figure , canvas {
+    max-width : 100%;
+    display : block;
+    width : 100%;
+    height : initial;
+    object-fit : cover;
+    object-position : center center;
+  }
+  a {
+    display : block;
+    text-decoration : none;
+    color : inherit;
+    font :  inherit;
+  }
+  p a {
+    display : inline;
+  }
+  li , menu, summary {
+    list-style-type : none;
+  }
+  ol {
+    counter-reset : revert;
+  }
+  h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , blockquote , i , b , u , em , pre , code , mark , del {
+    font :  inherit;
+    text-decoration :  none;
+    color : inherit;
+    overflow-wrap : break-word;
+    text-wrap : pretty;
+  }
+  mark {
+    background-color : transparent;
+  }
+  blockquote::before , blockquote::after , q::before , q::after {
+    content : none;
+  }
+  form , input , textarea , select , button , label {
+    font :  inherit;
+    hyphens : auto;
+    background-color : transparent;
+    color : inherit;
+    display : block;
+    appearance : none;
+  }
+  fieldset {
+    border : none;
+  }
+  ::placeholder {
+    color : unset;
+  }
+  button , label {
+    cursor : pointer;
+  }
+  table , tr , td , th , tbody , thead , tfoot {
+    border-collapse : collapse;
+    border-spacing : 0;
+    font : inherit;
+  }
+
+  body {
+    min-height : 100vh;
+    line-height : 1.5em;
+    color : inherit;
+    hyphens : auto;
+    font-smooth : always;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+  }
+
+:root{
+    --font-body: "Montserrat";
+    --weight-body: 500;
+    --size-title: 55px;
+    --lineHeight-body:1.5;
+    --weight-h3: 600;
+    --size-h3: 25px;
+    --size-menu: 20px;
+}
+
+.Header {
+    width: 100%;
+    min-height: 6.25rem;
+
+    padding: 1.875rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+}
+.Header-h1 {
+    font-size: 3.125rem;
+    font-weight: 600;
+}
+.Header-responsive {
+    display: none;
+}
+.Header-nav {
+}
+.Header-ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+.Header-li {
+}
+.Header-button {
+    font-family: var(--font-body);
+    font-weight: var(--weight-h3);
+    font-size: var(--size-menu);
+}
+.Header-button:hover{
+    background-color: black;
+    color: white;
+}
+
+
+@media (max-width: 1000px){
+    .Header-nav{
+        display: none;
+    }
+
+    .Header-responsive{
+        display: flex;
+    }
+}
+
+.Main {
+    font-family: var(--font-body);
+    font-weight: var(--weight-body);
+    line-height: var(--lineHeight-body);
+}
+.Main-curso {
+    width: 100%;
+    min-height: calc ( 100vh - 100px );
+    background-color:  rgb(252, 204, 220);
+
+    padding: 1.875rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-items: space-between;
+    align-items: stretch;
+    gap: 2.8125rem;
+}
+.Main-column{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.Main-column--left {
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.Main-title {
+    margin: 2.5rem 0;
+    margin-top: 6.25rem;
+}
+.Main-h2 {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 2.5rem 0;
+
+    font-size: var(--size-title);
+}
+.Main-h3 {
+    margin: 1.25rem 0;
+
+    font-family: var(--font-body);
+    font-weight: var(--weight-h3);
+    font-size: var(--size-h3);
+}
+.Main-row {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.5rem;
+}
+.Main-modalidades {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.25rem;
+}
+.Main-modalidades .Main-li--modalidades:hover{
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+}
+.Main-li--modalidades.activo {
+    background-color: black;
+    color: white;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+}
+.Main-checkCircle{}
+.Main-modalidades .Main-li--modalidades{
+    width: calc(100% / 2 - 10px);
+    border: solid 1px black;
+
+    padding: .625rem;
+
+    display: flex;
+    justify-content: center;
+}
+.Main-titulacion {
+    text-transform: uppercase;
+}
+.Main-titulacion .Main-li{
+    margin: 1.25rem 0;
+}
+.Main-titulacion .Main-li:hover{
+    text-decoration: underline;
+}
+.Main-p--curso {
+}
+.Main-column--right {
+    width: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: end;
+    align-items: end;
+
+}
+.Main-column--right .Main-row{
+    width: 90%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: end;
+    gap: 30px;
+}
+.Main-info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+.Main-info .Main-li--info{
+    border-bottom: solid black 1px; 
+}
+
+.Main-info .Main-li--info:hover{
+    text-decoration: underline;
+}
+
+.Main-inicio {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .625rem;
+}
+.Main-box {
+    border: solid black 1px;
+    padding: 10px;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Main-box.download{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+}
+
+.Main-box:hover{
+    text-decoration:underline ;
+}
+.Main-box.matriculate:hover{
+    background-color: black;
+    color: white;
+}
+
+.Main-curso.mobile{
+    display: none;
+}
+
+.Main-fixed{
+    display: none;
+}
+
+@media (max-width:1000px){
+    .Main-curso.desktop{
+        display: none;
+    }
+    .Main-curso.mobile{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .Main-p--curso{
+        margin: 1.875rem 0;
+    }
+    .Main-box.matriculate{
+        margin-top: 1.25rem ;
+
+    }
+    .Main-fixed{
+        width: 100%;
+        min-height: 1.875rem;
+        background-color:rgb(252, 204, 220) ;
+
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        bottom: 0;
+        position: fixed;
+    }
+    .Main-cookie{
+        width: 3.75rem;
+        height: 3.75rem;
+        background-color: lightgray;
+        border-radius: 50%;
+        color: black;
+        margin-left: 30px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cookie{
+        width: 1.5625rem;
+        height: 1.5625rem;
+    }
+    .Main-whatsapp{
+        width: 3.75rem;
+        height: 3.75rem;
+        background-color: rgb(81, 217, 81);
+        border-radius: 50%;
+        color: white;
+        margin-right: 30px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .whatsapp{
+        width: 1.5625rem;
+        height: 1.5625rem;
+    }
+    .Main-solicitarInfo{
+        width: 100%;
+        border: solid black 1px;
+
+        margin: 1.875rem;
+        padding: .625rem;
+
+        text-align: center;
+    }
+    .Main-solicitarInfo:hover{
+        text-decoration: underline;
+    }
+}
+
+@media (max-width:800px){
+    .Main-p--curso{
+       display: none;
+    }
+}
+
+@media (max-width:560px){
+    .Main-titulacion{
+       display: none;
+    }
+
+}
+
+.Main-wrapper {
+    padding: 1.875rem;
+}
+.Main-content {
+    margin: 20px 0px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+.Main-duracion {
+}
+.Main-h3 {
+}
+.Main-abiertoPlazo{
+    text-decoration: underline;
+    margin: 1.25rem 0;
+}
+.Main-ul .Main-div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: .625rem;
+}
+.Main-li {
+    margin: .5rem 0;
+}
+
+.Main-datos {
+}
+.Main-grid {
+    border: solid black 1px;
+
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+}
+
+.Main-h4 {
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+}
+.Main-p {
+    margin: 1.25rem 0;
+}
+.Main-titulo {
+    margin: 1.25rem;
+
+}
+.Main-precio {
+    margin: 1.25rem;
+}
+.Main-gratis {
+    margin: 1.25rem;
+}
+.Main-convocatorias {
+    margin: 1.25rem;
+}
+.Main-modalidad {
+    margin: 1.25rem;
+}
+.Main-certificado {
+    margin: 1.25rem;
+}
+.Main-ul{}
+.Main-li {
+}
+
+.Main-svg{
+}
+
+.Main-img{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+@media (max-width:700px){
+    .Main-datos{
+        display: none;
+    }
+    .Main-imparticion{
+        display: none;
+    }
+}
+
+@media (max-width:800px) {
+    .Main-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Main-img{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+}
+
