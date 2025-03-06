@@ -1,2 +1,2 @@
 # web-CEI
- página de Máster en Diseño Gráfico
+ Página de Máster en Diseño Gráfico en CEI
